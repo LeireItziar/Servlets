@@ -34,7 +34,7 @@
 	<h2>Login</h2>
 	
 	<jsp:useBean id="usuario" scope="request"
-		class="com.ipartek.ejemplos.javierlete.tipos.Usuario" />
+		class="com.ipartek.ejemplos.leire.tipos.Usuario" />
 
 	<form action="login" method="post">
 		<fieldset>

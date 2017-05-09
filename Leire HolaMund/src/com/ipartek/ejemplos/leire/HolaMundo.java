@@ -37,7 +37,8 @@ import javax.servlet.http.HttpServletResponse;
 //
 //}
 import com.ipartek.ejemplos.leire.dal.UsuariosDAL;
-import com.ipartek.ejemplos.leire.tipos.Usuario;
+import com.ipartek.ejemplos.leire.dal.UsuariosDALUsuarioUnico;
+import com.ipartek.ejemplos.leire.tipos.Producto;
 
 @WebServlet(name = "Saludo", urlPatterns = { "/hola" })
 public class HolaMundo extends HttpServlet {
@@ -50,7 +51,7 @@ public class HolaMundo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UsuariosDAL usuariosDAL = new UsuariosDALUsuarioUnico();
 
-		usuariosDAL.alta(new Usuario("javi", "Lete"));
+		usuariosDAL.alta(new Producto("javi", "Lete"));
 
 		request.setCharacterEncoding("UTF-8");
 
@@ -62,7 +63,7 @@ public class HolaMundo extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String pass = request.getParameter("pass");
 
-		Usuario usuario = new Usuario(nombre, pass);
+		Producto usuario = new Producto(nombre, pass);
 
 		if (usuariosDAL.validar(usuario))
 			out.println("Bienvenido");

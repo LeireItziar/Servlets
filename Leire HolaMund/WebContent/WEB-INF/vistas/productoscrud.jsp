@@ -1,0 +1,32 @@
+<%@ include file="includes/cabecera.jsp"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<h2>Mantenimiento de productos</h2>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+			<th>Precio</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach items="${requestScope.usuarios}" var="usuario">
+			<tr>
+				<td>
+					<a href="?op=modificar&id=${usuario.nombre}">Modificar</a>
+					<a href="?op=borrar&id=${usuario.nombre}">Borrar</a>
+				</td>
+				<td>${usuario.nombre}</td>
+				<td>${usuario.pass}</td>
+			</tr>
+		</c:forEach>
+	</tbody>
+</table>
+
+<a href="?op=alta">Alta</a>
+
+<%@ include file="includes/pie.jsp"%>

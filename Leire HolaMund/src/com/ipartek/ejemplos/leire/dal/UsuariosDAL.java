@@ -1,9 +1,17 @@
 package com.ipartek.ejemplos.leire.dal;
 
-import com.ipartek.ejemplos.leire.tipos.Usuario;
+import com.ipartek.ejemplos.leire.tipos.Producto;
 
 public interface UsuariosDAL {
-	public void alta(Usuario usuario);
+	public void alta(Producto usuario);
 
-	public boolean validar(Usuario usuario);
+	public void modificar(Producto usuario);
+
+	public void borrar(Producto usuario);
+
+	public Producto buscarPorId(String id);
+
+	public Producto[] buscarTodosLosUsuarios();
+
+	public boolean validar(Producto usuario);
 }

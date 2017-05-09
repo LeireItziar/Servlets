@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ipartek.ejemplos.leire.dal.DALFactory;
+import com.ipartek.ejemplos.leire.dal.UsuarioYaExistenteDALException;
 import com.ipartek.ejemplos.leire.dal.UsuariosDAL;
-import com.ipartek.ejemplos.leire.tipos.Usuario;
+import com.ipartek.ejemplos.leire.tipos.Producto;
 
 @WebServlet("/alta")
 public class AltaServlet extends HttpServlet {
-	/* package */static final String USUARIOS_DAL = "usuariosDAL";
+	/* package */static final String USUARIOS_DAL = "dal";
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +36,7 @@ public class AltaServlet extends HttpServlet {
 		// Las contraseñas deben ser iguales
 		// Datos correctos: guardar
 
-		Usuario usuario = new Usuario(nombre, pass);
+		Producto usuario = new Producto(nombre, pass);
 
 		boolean hayDatos = nombre != null && pass != null && pass2 != null;
 		boolean datosCorrectos = validarCampo(nombre) && validarCampo(pass) && validarCampo(pass2);
